@@ -57,7 +57,11 @@ import time
  # START THE APP # # # # # # # # # # # # # # # # # # # # # # # # o o 
 #                                                                                                                                                                                    
 if __name__ == "__main__":
+    
     # CONNECT TO CLIENT
+    send_message("I'm awake")
+    
+
     try:
         client = connect_dydx()
     except Exception as e:
