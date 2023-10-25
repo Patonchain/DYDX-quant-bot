@@ -49,7 +49,13 @@ MODE = "TEST"   # ONLY ONE MODE CAN BE ACTIVE AT A TIME                         
 # # # # # # # # #                                                                                                          #
 #                                                                                                                          #
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
-                                                                                                                            
+
+ # DAILY  I CHING READING # # # # # # # # # # # # # # # # # # # #                                                           
+#                                                                                                                           
+DAILY_DIVINATION = True                                                                                                 
+#                                                                                                                           
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
  # EXIT ALL TRADES # # # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
 ABORT_ALL_POSITIONS = False                                                                                                 
