@@ -7,7 +7,7 @@ import time
 def is_open_positions(client, market):
 
     # PRODUCTIVITY JOINT
-    time.sleep(0.5)
+    time.sleep(0.2)
 
     # QUERY POSITION DATA
     all_positions = client.private.get_positions(
@@ -65,13 +65,13 @@ def abort_all_positions(client):
     print("STEP1")
 
     # QUICK CAT NAP
-    time.sleep(0.5)
+    time.sleep(0.2)
     
     # GET MARKETS FOR REFERENCE OF TICK SIZE
     markets = client.public.get_markets().data
     print("get market data")
     # SNOOZE BUTTON
-    time.sleep(0.5)
+    time.sleep(0.2)
 
     # GET ALL OPEN POSITION
     positions = client.private.get_positions(status = "OPEN")

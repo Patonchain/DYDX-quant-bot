@@ -52,14 +52,13 @@ MODE = "TEST"   # ONLY ONE MODE CAN BE ACTIVE AT A TIME                         
                                                                                                                             
  # EXIT ALL TRADES # # # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
-ABORT_ALL_POSITIONS = False                                                                                                 
+ABORT_ALL_POSITIONS = True                                                                                                 
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
                                                                                                                             
  # FIND PAIRS TOGGLE # # # # # # # # # # # # # # # # # # # # # #                                                            
-#                                    
-#                                                                                        
-FIND_COINTEGRATED = False                                                                                                 
+#                                                                                                                        
+FIND_COINTEGRATED = True                                                                                                 
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
                                                                                                                             
@@ -71,7 +70,7 @@ PLACE_TRADES = True
 
  # AUTO MANGE POSITIONS TOGGLE # # # # # # # # # # # # # # # # #                                                          
 #                                                                                                                           
-MANAGE_EXITS = False                                                                                                         
+MANAGE_EXITS = True                                                                                                         
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                             
                                                                                                                             
@@ -90,7 +89,7 @@ WINDOW = 21
  # OPENING THRESHHOLDS # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
 MAX_HALF_LIFE = 24                                                                                                          
-ZSCORE_THRESH = 0.5                                                                                                        
+ZSCORE_THRESH = 1.5                                                                                                        
 USD_PER_TRADE = 100                                                                                                          
 USD_MIN_COLLATERAL = 1888                                                                                                   
 #                                                                                                                           
@@ -98,7 +97,7 @@ USD_MIN_COLLATERAL = 1888
                                                                                                                             
  # CLOSING THRESHOLD # # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
-CLOSE_AT_ZSCORE_CROSS = True                                                                                                
+CLOSE_AT_ZSCORE_CROSS = False                                                                                                
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 

@@ -31,7 +31,7 @@ def connect_dydx():
     account = client.private.get_account()
     account_id = account.data["account"]["id"]
     quote_balance = account.data["account"]["quoteBalance"]
-    print ("Ready to raid the vaults!")
+    print ("Connected to client")
     print ("Account ID:", account_id)
     print ("Quote Balance:", quote_balance)
 

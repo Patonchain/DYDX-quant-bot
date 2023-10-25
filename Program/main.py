@@ -42,14 +42,15 @@
 #                                                                                                                           
 from constants import ABORT_ALL_POSITIONS, FIND_COINTEGRATED, PLACE_TRADES, MANAGE_EXITS
 from func_connections import connect_dydx
-from constants import ABORT_ALL_POSITIONS, FIND_COINTEGRATED
 from func_private import abort_all_positions
 from func_public import construct_market_prices
 from func_cointegration import store_cointegration_results
 from func_entry_pairs import open_positions
-from func_exit_pairs import manage_exits
-from i_ching import divination 
-import time 
+from func_exit_pairs import manage_trade_exits
+from func_messaging import send_message
+from i_ching import divination
+import time
+
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # o                                                             
                                                                                                                                                                                                                                                       
@@ -90,6 +91,8 @@ if __name__ == "__main__":
         try:
             print("Give me like 5 mins and ill give you a dataframe of market prices... ")
             df_market_prices = construct_market_prices(client)
+            print("Asking the I Ching ...")
+            print(divination())
         except Exception as e:
             print(e)
             print("Error constructing market prices: ", e)
@@ -110,17 +113,19 @@ if __name__ == "__main__":
             #
              #                                                                                                                           
               # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+ 
+      # SET TO ALWAYS RUN TOGGLE # # # # # # # # # # # # # # # # # # # # # #
+    #
+    while True:
 
          # MANAGE OPEN TRADES # # # # # # # # # # # # # # # # # # # # # #
         #
         if MANAGE_EXITS:
             try:
                 print("Reading crypto twitter to make sure trades we made aren't shit... ")
-                print("Asking the I Ching ...")
-                print(divination())
-                time.sleep(10)
                 print("Checking existing positions...")
-                manage_exits(client)
+                manage_trade_exits(client)
+                print("I checked the positions")
 
             except Exception as e:
                 print(e)

@@ -9,7 +9,7 @@ import time
 from pprint import pprint
 
 # Manage trade exits
-def manage_exits(client):
+def manage_trade_exits(client):
 
   """
     Manage exiting open positions

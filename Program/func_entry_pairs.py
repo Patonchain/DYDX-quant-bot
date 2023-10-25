@@ -20,13 +20,12 @@ def open_positions(client):
 
   # Load cointegrated pairs
   df = pd.read_csv("cointegrated_pairs.csv")
-  print(df)
+
   # Get markets from referencing of min order size, tick size etc
   markets = client.public.get_markets().data
-  print("Got markets", markets)
+
   # Initialize container for BotAgent results
   bot_agents = []
-
   # Opening JSON file
   try:
     open_positions_file = open("bot_agents.json")
