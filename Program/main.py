@@ -40,7 +40,7 @@
                                                                                                                                                                                                                                                        
  # IMPORT REQUIRED PARTS # # # # # # # # # # # # # # # # # # # o                                                           
 #                                                                                                                           
-from constants import ABORT_ALL_POSITIONS, FIND_COINTEGRATED, PLACE_TRADES, MANAGE_EXITS
+from constants import ABORT_ALL_POSITIONS, FIND_COINTEGRATED, PLACE_TRADES, MANAGE_EXITS, DAILY_DIVINATION
 from func_connections import connect_dydx
 from func_private import abort_all_positions
 from func_public import construct_market_prices
@@ -52,7 +52,12 @@ from i_ching import divination
 import time
 
 #                                                                                                                           
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # o                                                             
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # o  
+
+ # DIVINATION # # # # # # # # # # # # # # # # # # # # # # # # o  
+# 
+if DAILY_DIVINATIONS:
+    print(divination())
                                                                                                                                                                                                                                                       
  # START THE APP # # # # # # # # # # # # # # # # # # # # # # # # o o 
 #                                                                                                                                                                                    
@@ -60,8 +65,7 @@ if __name__ == "__main__":
     
     # CONNECT TO CLIENT
     send_message("I'm awake")
-    
-
+   
     try:
         client = connect_dydx()
     except Exception as e:
