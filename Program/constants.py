@@ -14,14 +14,14 @@
 #                                                                                                                          #
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
                                                                                                                             
- # 1 IMPORT REQUIRED PARTS # # # # # # # # # # # # # # # # # # #                                                            
+ # IMPORT REQUIRED PARTS # # # # # # # # # # # # # # # # # # # #                                                           
 #                                                                                                                           
 from dydx3.constants import API_HOST_GOERLI, API_HOST_MAINNET                                                               
 from decouple import config                                                                                                 
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
                                                                                                                             
- # 2 ACTIVATE MAINNET / GOERLI TESTNET # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+ # ACTIVATE MAINNET / GOERLI TESTNET # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 #                                                                                                                          #
 #                                                                                                                          #
 #            .-')     ('-.            ('-.           .-') _          _   .-')              _ .-') _    ('-.                #
@@ -42,10 +42,10 @@ from decouple import config
 #              |  |  |  `---\       /  |  |            `'  '-'  |  |\  \        |  '--'  /|  `---.   \   /                 #
 #              `--'  `------'`-----'   `--'              `-----'`--' '--'       `-------' `------'    `-'                  #
 #                                                                                                                          #
-# DELETE THE "#" TO MAKE YOUR CHOICE ACTIVE, ONLY ONE MODE CAN BE ACTIVE AT A TIME!                                        #
+#                                                                                                                          #
 # # # # # # # # #                                                                                                          #
-# MODE = "DEV"  #                                                                                                          #
-MODE = "TEST"   #                                                                                                          #
+# MODE = "DEV"  # DELETE THE "#" TO MAKE YOUR CHOICE ACTIVE                                                                #                                         #
+MODE = "TEST"   # ONLY ONE MODE CAN BE ACTIVE AT A TIME                                                                    #                                    #
 # # # # # # # # #                                                                                                          #
 #                                                                                                                          #
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
@@ -57,8 +57,9 @@ ABORT_ALL_POSITIONS = False
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
                                                                                                                             
  # FIND PAIRS TOGGLE # # # # # # # # # # # # # # # # # # # # # #                                                            
-#                                                                                                                           
-FIND_COINTEGRATED = True                                                                                                    
+#                                    
+#                                                                                        
+FIND_COINTEGRATED = False                                                                                                 
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
                                                                                                                             
@@ -66,7 +67,13 @@ FIND_COINTEGRATED = True
 #                                                                                                                           
 PLACE_TRADES = True                                                                                                         
 #                                                                                                                           
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+ # AUTO MANGE POSITIONS TOGGLE # # # # # # # # # # # # # # # # #                                                          
+#                                                                                                                           
+MANAGE_EXITS = False                                                                                                         
+#                                                                                                                           
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                             
                                                                                                                             
  # DATA RESOLUTION # # # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
@@ -83,8 +90,8 @@ WINDOW = 21
  # OPENING THRESHHOLDS # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
 MAX_HALF_LIFE = 24                                                                                                          
-ZSCORE_THRESH = 1.5                                                                                                         
-USD_PER_TRADE = 50                                                                                                          
+ZSCORE_THRESH = 0.5                                                                                                        
+USD_PER_TRADE = 100                                                                                                          
 USD_MIN_COLLATERAL = 1888                                                                                                   
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
@@ -92,6 +99,12 @@ USD_MIN_COLLATERAL = 1888
  # CLOSING THRESHOLD # # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
 CLOSE_AT_ZSCORE_CROSS = True                                                                                                
+#                                                                                                                           
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+ # OPEN AI API KEY # # # # # # # # # # # # # # # # # # # # # #                                                            
+#                                                                                                                           
+OPENAI_API_KEY = config("OPENAI_API_KEY")                                                                                               
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
                                                                                                                             

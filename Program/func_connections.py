@@ -24,13 +24,13 @@ def connect_dydx():
         stark_private_key = STARK_PRIVATE_KEY,
         eth_private_key = config("ETH_PRIVATE_KEY"),
         default_ethereum_address = ETHEREUM_ADDRESS,
-        web3=Web3(Web3.HTTPProvider(HTTP_PROVIDER))
+        web3 = Web3(Web3.HTTPProvider(HTTP_PROVIDER))
 )
     
     # CONFIRM CONNECTION
     account = client.private.get_account()
     account_id = account.data["account"]["id"]
-    quote_balance = account_id = account.data["account"]["quoteBalance"]
+    quote_balance = account.data["account"]["quoteBalance"]
     print ("Ready to raid the vaults!")
     print ("Account ID:", account_id)
     print ("Quote Balance:", quote_balance)
