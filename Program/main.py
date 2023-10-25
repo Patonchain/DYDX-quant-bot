@@ -56,7 +56,7 @@ import time
 
  # DIVINATION # # # # # # # # # # # # # # # # # # # # # # # # o  
 # 
-if DAILY_DIVINATIONS:
+if DAILY_DIVINATION:
     print(divination())
                                                                                                                                                                                                                                                       
  # START THE APP # # # # # # # # # # # # # # # # # # # # # # # # o o 
