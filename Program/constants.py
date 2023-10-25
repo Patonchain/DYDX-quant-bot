@@ -52,7 +52,7 @@ MODE = "TEST"   # ONLY ONE MODE CAN BE ACTIVE AT A TIME                         
                                                                                                                             
  # EXIT ALL TRADES # # # # # # # # # # # # # # # # # # # # # # #                                                            
 #                                                                                                                           
-ABORT_ALL_POSITIONS = True                                                                                                 
+ABORT_ALL_POSITIONS = False                                                                                                 
 #                                                                                                                           
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                                                            
                                                                                                                             
