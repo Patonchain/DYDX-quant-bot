@@ -99,8 +99,6 @@ if __name__ == "__main__":
         try:
             print("Give me like 5 mins and ill give you a dataframe of market prices... ")
             df_market_prices = construct_market_prices(client)
-            print("Asking the I Ching ...")
-            print(divination())
         except Exception as e:
             print(e)
             print("Error constructing market prices: ", e)
