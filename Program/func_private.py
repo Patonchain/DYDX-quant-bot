@@ -2,6 +2,7 @@ from func_utils import format_number
 from datetime import datetime,timedelta
 from pprint import pprint
 import time
+import json
 
 # GET EXISTING OPEN POSITIONS
 def is_open_positions(client, market):
@@ -114,6 +115,11 @@ def abort_all_positions(client):
 
             # API FEELING OVER WORKED
             time.sleep(0.2)
+        
+        # OVERRIDE JSON FILE WITH EMPTY LIST
+        bot_agents = []
+        with open("bot_agents.json", "w") as f:
+            json.dump(bot_agents, f)   
         
         # RETURN CLOSED ORDERS
         return close_orders
