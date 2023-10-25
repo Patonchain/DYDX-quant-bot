@@ -243,9 +243,25 @@ def i_ching_response():
     # For the sake of this example, I'm using the sample_response variable
     # In actual implementation, you'll run your script or the function that generates the output and capture its output
     
-    response_text = result_dynamic = divination()()  # Replace this with the function or code that generates your output
+    response_text = divination()()  # Replace this with the function or code that generates your output
     svg_content = generate_svg_content(response_text)
     return Response(svg_content, content_type='image/svg+xml')
-
+d
+def generate_svg_content(ascii_text):
+    """Convert ASCII text to SVG content."""
+    # Define SVG template with placeholders
+    svg_template = """
+    <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="black" />
+        <text x="20" y="20" font-family="monospace" font-size="14" fill="white" xml:space="preserve">
+            {}
+        </text>
+    </svg>
+    """
+    # Convert ASCII text to SVG-compatible format (i.e., convert newline characters to SVG's tspan elements)
+    svg_text = "\n".join(f'<tspan x="20" dy="1.2em">{line}</tspan>' for line in ascii_text.split("\n"))
+    
+    # Return the formatted SVG content
+    return svg_template.format(svg_text)
 if __name__ == '__main__':
     app.run(debug=True)
